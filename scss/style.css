@@ -1,0 +1,56 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html body {
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+  line-height: 1.8;
+}
+
+html body .container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+html body .container #mountain-image {
+  width: 60%;
+  position: fixed;
+  bottom: 0;
+  left: 20%;
+  transform: translateX(-20%);
+  -webkit-transform: translateX(-20%);
+}
+
+html body .container #sun-image {
+  width: 15rem;
+  position: fixed;
+  top: 10%;
+  left: 30%;
+  transform: translateX(-30%) translateY(-10%);
+  -webkit-transform: translateX(-30%) translateY(-10%);
+}
+
+html body .container #fly_bird-image {
+  width: 30rem;
+  position: fixed;
+  top: 40%;
+  left: 0;
+  transform: translateY(-40%);
+  -webkit-transform: translateY(-40%);
+}
+/*# sourceMappingURL=style.css.map */
