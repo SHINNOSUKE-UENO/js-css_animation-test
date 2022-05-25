@@ -89,8 +89,8 @@ html body .container .horizontal-move {
 
 html body .container .loop-wrap {
   position: fixed;
-  top: 0;
-  right: 0;
+  top: calc(10% + 4rem);
+  left: calc(40% + 8rem);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -98,7 +98,7 @@ html body .container .loop-wrap {
   height: 70px;
   overflow: hidden;
   z-index: -10;
-  background-color: antiquewhite;
+  background-color: #D3D9FE;
 }
 
 html body .container .loop-wrap img {
