@@ -19,6 +19,9 @@ html {
 html body {
   font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
   line-height: 1.8;
+  background-color: #dff3fc;
+  height: 100vh;
+  margin: 0;
 }
 
 html body .container {
@@ -29,6 +32,7 @@ html body .container {
 
 html body .container #first_slide-up {
   display: none;
+  z-index: 10;
   width: 60%;
   position: fixed;
   bottom: 0;
@@ -81,5 +85,80 @@ html body .container .horizontal-move {
   left: -30rem;
   transform: translateY(-40%);
   -webkit-transform: translateY(-40%);
+}
+
+html body .container .loop-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40vw;
+  height: 70px;
+  overflow: hidden;
+  z-index: -10;
+  background-color: antiquewhite;
+}
+
+html body .container .loop-wrap img {
+  width: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 0 1.5rem;
+}
+
+html body .container .loop-wrap img:first-child {
+  -webkit-animation: loop 30s -15s linear infinite;
+          animation: loop 30s -15s linear infinite;
+}
+
+html body .container .loop-wrap img:last-child {
+  -webkit-animation: loop2 30s linear infinite;
+          animation: loop2 30s linear infinite;
+}
+
+@-webkit-keyframes loop {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes loop {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes loop2 {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-200%);
+            transform: translateX(-200%);
+  }
+}
+
+@keyframes loop2 {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-200%);
+            transform: translateX(-200%);
+  }
 }
 /*# sourceMappingURL=style.css.map */

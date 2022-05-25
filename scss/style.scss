@@ -16,6 +16,9 @@ html {
     body {
         font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
         line-height: 1.8;
+        background-color: rgb(223, 243, 252);
+        height: 100vh;
+        margin: 0;
 
         .container {
             width: 100%;
@@ -24,6 +27,7 @@ html {
 
             #first_slide-up {
                 display: none;
+                z-index: 10;
                 width: 60%;
                 position: fixed;
                 bottom: 0; left: 20%;
@@ -54,6 +58,45 @@ html {
                 top: 40%; left: -30rem;
                 transform: translateY(-40%);
                 -webkit-transform: translateY(-40%);
+            }
+            .loop-wrap {
+                position: fixed;
+                top: 0; right: 0;
+                display: flex;
+                width: 40vw;
+                height: 70px;
+                overflow: hidden;
+                z-index: -10;
+                background-color: antiquewhite;
+
+                img {
+                    width: auto;
+                    object-fit: contain;
+                    padding: 0 1.5rem;
+
+                    &:first-child {
+                        animation: loop 30s -15s linear infinite;
+                    }
+                    &:last-child {
+                        animation: loop2 30s linear infinite;
+                    }
+                    @keyframes loop {
+                        0% {
+                            transform:  translateX(100%);
+                        }
+                        to {
+                            transform: translateX(-100%);
+                        }
+                    }
+                    @keyframes loop2 {
+                        0% {
+                            transform: translateX(0);
+                        }
+                        to {
+                            transform: translateX(-200%);
+                        }
+                    }
+                }
             }
         } // .container -ed.
     } // body -ed.

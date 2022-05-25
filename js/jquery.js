@@ -15,7 +15,7 @@ function second() {
     document.querySelector(`.horizontal-move`).animate(
     [
         { transform: 'translateX(0)' },
-        { transform: 'translate(140vw)' }
+        { transform: 'translate(calc(100vw + 30rem))' }
     ],
     {
         duration: 10000,
@@ -36,7 +36,7 @@ function asynchronyFunction() {
             setTimeout(() => {
                 second();
                 resolve();
-            },1500);
+            },2000);
         })
     });
 }
