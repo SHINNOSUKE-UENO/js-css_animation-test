@@ -1,0 +1,287 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+html body {
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+  line-height: 1.8;
+  background-color: rgb(223, 243, 252);
+  height: 100vh;
+  margin: 0;
+}
+html body .container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+html body .container #first_slide-up {
+  display: none;
+  z-index: 10;
+  width: 60%;
+  position: fixed;
+  bottom: 0;
+  left: 20%;
+  transform: translateX(-20%);
+  -webkit-transform: translateX(-20%);
+  -webkit-animation: SlideIn 1.6s;
+          animation: SlideIn 1.6s;
+}
+@-webkit-keyframes SlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20%) translateY(100vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-20%) translateY(0);
+  }
+}
+@keyframes SlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20%) translateY(100vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-20%) translateY(0);
+  }
+}
+html body .container #sun-image {
+  width: 15rem;
+  position: fixed;
+  top: 10%;
+  left: 30%;
+  transform: translateX(-30%) translateY(-10%);
+  -webkit-transform: translateX(-30%) translateY(-10%);
+}
+html body .container .horizontal-move {
+  width: 30rem;
+  position: fixed;
+  top: 40%;
+  left: -30rem;
+  transform: translateY(-40%);
+  -webkit-transform: translateY(-40%);
+}
+html body .container .loop-wrap {
+  position: fixed;
+  top: calc(10% + 4rem);
+  left: calc(40% + 8rem);
+  display: flex;
+  width: 40vw;
+  height: 70px;
+  overflow: hidden;
+  z-index: -10;
+  background-color: #D3D9FE;
+}
+html body .container .loop-wrap img {
+  width: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 0 1.5rem;
+}
+html body .container .loop-wrap img:first-child {
+  -webkit-animation: loop 30s -15s linear infinite;
+          animation: loop 30s -15s linear infinite;
+}
+html body .container .loop-wrap img:last-child {
+  -webkit-animation: loop2 30s linear infinite;
+          animation: loop2 30s linear infinite;
+}
+@-webkit-keyframes loop {
+  0% {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes loop {
+  0% {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes loop2 {
+  0% {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
+@keyframes loop2 {
+  0% {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
+
+main {
+  position: relative;
+  overflow: hidden;
+}
+main .load {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: #fcfcf3;
+}
+main .block {
+  display: inline-block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 5px 5px 10px rgb(105, 105, 105);
+  -webkit-animation: fadein 8s ease;
+          animation: fadein 8s ease;
+  transition-property: -webkit-animation;
+  transition-property: animation;
+  transition-property: animation, -webkit-animation;
+  -webkit-animation-iteration-count: 3;
+          animation-iteration-count: 3;
+}
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+main .load2 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #fcfcf3;
+  overflow: hidden;
+}
+main .balloon {
+  -webkit-animation: fadeIn 8s ease;
+          animation: fadeIn 8s ease;
+  transition-property: -webkit-animation;
+  transition-property: animation;
+  transition-property: animation, -webkit-animation;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+main .fade-area {
+  width: 100%;
+  height: 100vh;
+  background: rgb(81, 173, 81);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+main .fade-area::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: circle(50% at 9% 12%);
+          clip-path: circle(50% at 9% 12%);
+  background: linear-gradient(rgb(15, 164, 15), rgb(0, 255, 183));
+}
+main .fade-area .fade-card {
+  width: 300px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgb(199, 244, 199);
+  border-left: 1px solid rgb(199, 244, 199);
+  border-radius: 8px;
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+main .fade-area .fade-card .content {
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+main .fade-area .fade-card .content h2 {
+  position: absolute;
+  font-size: 8rem;
+  top: -50px;
+  right: 20px;
+  color: rgba(255, 255, 255, 0.1);
+}
+main .fade-area .fade-card .content h3 {
+  color: #fff;
+  font-size: 1.8rem;
+}
+main .fade-area .fade-card .content p {
+  color: #fff;
+  font-weight: 300;
+}
+main .fade-area .fade-card .content a {
+  display: inline-block;
+  padding: 8px 20px;
+  background: #fff;
+  margin-top: 15px;
+  border-radius: 20px;
+  color: #000;
+  font-weight: 500;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
+/*# sourceMappingURL=style.css.map */
